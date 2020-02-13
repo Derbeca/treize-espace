@@ -9,7 +9,8 @@
 
 <body>
     <!-- MODAL CONNEXION -->
-    <div class="maModal">
+    <div class="maModal" id="modal-connexion">
+        <img src="assets/svg/icon-fermer.svg" class="fermer3">
         <div  id="monFlex2">
             <div class="monForm">
                 <h2>Connexion</h2>
@@ -21,23 +22,24 @@
             </div>
         </div>
     </div>
-        <!-- MODAL INSCRIPTION -->
-        <div class="maModal">
-            <div  id="monFlex2">
-                <div class="monForm">
-                    <h2>Inscription</h2>
-                    <form>
-                        <input type="text" name="nom" placeholder="Entrez votre nom">
-                        <input type="text" name="prenom" placeholder="Entrez votre prenom">
-                        <input type="email" name="email" placeholder="Entrez votre email">
-                        <input type="text" name="tel" placeholder="Entrez votre téléphone">
-                        <input type="password" name="password" placeholder="Entrez un mot de passe">
-                        <input type="password" name="password_confir" placeholder="Confirmez le mot de passe">
-                        <button type="submit">S'INSCRIRE</button>
-                    </form>                   
-                </div>
+    <!-- MODAL INSCRIPTION -->
+    <div class="maModal" id="modal-inscription">
+        <img src="assets/svg/icon-fermer.svg" class="fermer4">
+        <div  id="monFlex2">
+            <div class="monForm">
+                <h2>Inscription</h2>
+                <form>
+                    <input type="text" name="nom" placeholder="Entrez votre nom">
+                    <input type="text" name="prenom" placeholder="Entrez votre prenom">
+                    <input type="email" name="email" placeholder="Entrez votre email">
+                    <input type="text" name="tel" placeholder="Entrez votre téléphone">
+                    <input type="password" name="password" placeholder="Entrez un mot de passe">
+                    <input type="password" name="password_confir" placeholder="Confirmez le mot de passe">
+                    <button type="submit">S'INSCRIRE</button>
+                </form>                   
             </div>
         </div>
+    </div>
 
     <header id="entete">
         <div id="monLogo">
@@ -49,10 +51,8 @@
         <div id="subMenu">
             <img src="assets/svg/icon-fermer.svg" class="fermer2">
             <ul>
-                <li><a href="#">Se connecter</a></li>
-                <li><a href="#">S'incrire</a></li>
-                <li><a href="#">Se déconnecter</a></li>
-                <li><a href="#">Réserver</a></li>
+                <li id="btn-connexion"><a href="#">Se connecter</a></li>
+                <li id="btn-inscription"><a href="#">S'incrire</a></li>
             </ul>
         </div>
         <div class="menu">
@@ -65,7 +65,7 @@
                 <li><a href="espace.html">ESPACE</a></li>
                 <li><a href="services.html">SERVICES</a></li>
                 <li><a href="tarifs.html">TARIFS</a></li>
-                <li><a href="communaute.html">COMMUNAUTÉ</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
             </ul>
         </div>
     </header>
