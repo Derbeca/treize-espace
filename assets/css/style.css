@@ -1,0 +1,505 @@
+
+
+  /* Parallax base styles
+  --------------------------------------------- */
+
+  .parallax {
+    height: 500px; /* fallback for older browsers */
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-perspective: 300px;
+    perspective: 300px;
+  }
+
+  .parallax__group {
+    position: relative;
+    height: 500px; /* fallback for older browsers */
+    height: 100vh;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+  .parallax__group p {
+    -webkit-filter: drop-shadow(2px 2px 2px black);
+    filter: drop-shadow(2px 2px 2px black);
+    color: white;
+    font-size: 4vmin;
+    text-align: center;
+  }
+  .parallax__group h2 {
+    -webkit-filter: drop-shadow(2px 2px 2px black);
+    filter: drop-shadow(2px 2px 2px black);
+    color: white;
+    font-size: 5vmin;
+    text-align: center;
+  }
+
+  .parallax__layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .parallax__layer--fore {
+    -webkit-transform: translateZ(90px) scale(.7);
+    transform: translateZ(90px) scale(.7);
+    z-index: 1;
+  }
+
+  .parallax__layer--base {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    z-index: 4;
+  }
+
+  .parallax__layer--back {
+    -webkit-transform: translateZ(-300px) scale(2);
+    transform: translateZ(-300px) scale(2);
+    z-index: 3;
+  }
+
+  .parallax__layer--deep {
+    -webkit-transform: translateZ(-600px) scale(3);
+    transform: translateZ(-600px) scale(3);
+    z-index: 2;
+  }
+
+
+  /* Debugger styles - used to show the effect
+  --------------------------------------------- */
+
+  #entete {
+    display: flex;
+
+    width: 100%;
+    height: 10vh;
+    background-color: white;
+  }
+  #logoWhite {
+    width: 100%;
+  }
+
+  #monLogo {
+    width: 10%;
+    min-width: 100px;
+    padding: 10px;
+  }
+  #logo {
+    width: 100%;
+  }
+
+  #login img {
+    width: 20px;
+  }
+  .test {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    z-index: 999;
+    background: rgba(255, 255, 255,1);
+    padding: 5px;
+    margin: 5px;
+  }
+  .monLogin {
+    position: fixed;
+    top: 10px;
+    right: 60px;
+    z-index: 998;
+    padding: 5px;
+    margin: 4px;
+  }
+
+
+  #monMenu {
+      display: none;
+      background-color: white;
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 1000;
+      width: 100%;
+      max-width: 400px;
+      height: 100vh;
+  }
+  #subMenu {
+    display: none;
+    background-color: #404041;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1001;
+    width: 100%;
+    max-width: 400px;
+    height: 100vh;
+}
+  #monMenu img {
+      padding: 20px;
+      width: 20px;
+      float: right;
+  }
+  #subMenu img {
+    padding: 20px;
+    width: 20px;
+    float: right;
+}
+  ul {
+      margin: 30px auto;
+      width: 60%;
+  }
+  li {
+      list-style: none;
+      padding: 15px;
+      text-align: right;
+  }
+  a {
+    font-family: 'Conthrax-sp', Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: #939597;
+  }
+  .debug-on .parallax__group {
+    -webkit-transform: translate3d(800px, 0, -800px) rotateY(30deg);
+    transform: translate3d(700px, 0, -800px) rotateY(30deg);
+  }
+  .debug-on .parallax__layer {
+    box-shadow: 0 0 0 2px #000;
+    opacity: 0.9;
+  }
+  .parallax__group {
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+  }
+
+  /* animations */
+  @keyframes montrer {
+    0% {opacity: 0;}
+    25% {opacity: 25%;}
+    50% {opacity: 50%;}
+    75% {opacity: 75%;}
+    100% {opacity: 100%;}
+  }
+  .montrer {
+    -webkit-animation-name: montrer;
+    animation-name: montrer;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+  }
+
+
+  /* demo styles
+  --------------------------------------------- */
+  @font-face {
+    font-family: conthrax-sp;
+    src: url('../fonts/conthrax/conthrax-sb.ttf');
+  }
+  body, html {
+
+  }
+  body {
+    font: 100% / 1.5 Arial;
+    background-color: white;
+  }
+  * {
+    margin:0;
+    padding:0;
+  }
+  #monFlex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .espaces {
+    width: 280px;
+    height: 100%;
+    padding: 10px;
+    margin: 10px;
+    background-color: white;
+    -webkit-filter: drop-shadow(0px 0px 8px #D1D2D4);
+    filter: drop-shadow(0px 0px 8px #D1D2D4);
+  }
+  .monForm {
+    width: 60%;
+    padding: 10px;
+    margin: 10px;
+    background-color: white;
+    -webkit-filter: drop-shadow(0px 0px 8px #D1D2D4);
+    filter: drop-shadow(0px 0px 8px #D1D2D4);
+  }
+  .monForm h2 {
+    color: #404041;
+    text-align: center;
+  }
+  .monImage img {
+    width: 280px;
+    height: 300px;
+    object-fit: cover;
+  }
+  .espaces p {
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0 0 10px 10px;
+    color: #939597;
+  }
+  .espaces h2 {
+    color: #404041;
+    font-size: 16px;
+    text-align: left;
+  }
+  .titre img {
+    width: 60%;
+    margin: auto;
+    display: block;
+  }
+  h2 {
+      font-family: 'Conthrax-sp', Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      text-align: right;
+      color:rgba(255, 255, 255,1);
+      padding: 10px;
+  }
+  p {
+      font-size: 3vmin;
+      font-family: 'Conthrax-sp', Arial, Helvetica, sans-serif;
+      text-align: left;
+      color: black;
+      padding: 10px;
+  }
+  #monFlex2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .imageLeft {
+    width: 100%;
+    height: 40vh;
+  }
+  .imageLeft img {
+    width: 100%;
+    height: 40vh;
+    object-fit: cover;
+  }
+  .titre {
+    width: auto;
+  }
+  .titre h2 {
+    color: #939597;
+    text-align: center;
+  }
+  #monFlex2 p {
+
+
+  }
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  input {
+    width: 90%;
+    height: 20px;
+    border: none;
+    background-color: #E6E7E8;
+    padding: 5px;
+    margin: 0 auto 10px;
+  }
+  button {
+    width: 90px;
+    height: 30px;
+    margin: 5px auto;
+    color: white;
+    background-color: #404041;
+    border: none;
+  }
+  footer {
+    height: 10vh;
+  }
+  #icons {
+    background-color: #939597;
+    margin: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  #icons img {
+    width: 30px;
+    margin: 5px;
+  }
+  #copyRight {
+    background-color: #404041;
+  }
+  #copyRight p {
+    color: #939597;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 12px;
+  }
+  .photo {
+      width: 100%;
+      object-fit: cover;
+  }
+  .parallax {
+    font-size: 200%;
+  }
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(10deg);
+    }
+  }
+  .title img {
+    width: 100%;
+    -webkit-filter: drop-shadow(5px 5px 5px #404041);
+    filter: drop-shadow(5px 5px 5px #404041);
+  }
+
+   /* centre the content in the parallax layers */
+  .title {
+    width: 30%;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  .fond {
+    position: absolute;
+    left: 30%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  .title2 {
+    position: absolute;
+    left: 30%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  .fond2 {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  .title3 {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+
+
+  /* style the groups
+  --------------------------------------------- */
+
+  #group1 {
+    z-index: 5; /* slide over group 2 */
+  }
+  #group1 .parallax__layer--base {
+    background-image: url('../images/working.jpg') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+  }
+
+  #group2 {
+    z-index: 3; /* slide under groups 1 and 3 */
+  }
+  #group2 .parallax__layer--back {
+    background-image: url("../images/connected2.jpg") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+  }
+
+  #group3 {
+    z-index: 4; /* slide over group 2 and 4 */
+  }
+  #group3 .parallax__layer--base {
+    background-image: url('../images/working2.jpg') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+  }
+
+  #group4 {
+    z-index: 2; /* slide under group 3 and 5 */
+  }
+  #group4 .parallax__layer--base {
+    background-image: url('../images/working3.jpg') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+  }
+
+  #group5 {
+    z-index: 3; /* slide over group 4 and 6 */
+  }
+  #group5 .parallax__layer--base {
+    background-image: url('../images/cafeterie2.jpg') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+  }
+
+  #group6 {
+    z-index: 2; /* slide under group 5 and 7 */
+  }
+  #group6 .parallax__layer--base {
+    background-image: url('../images/working4.jpg') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+  }
+
+  #group7 {
+    z-index: 3; /* slide over group 7 */
+  }
+  #group7 .parallax__layer--base {
+    background-image: url('../images/marseille.jpg') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+  }
+
+
+  /* misc
+  --------------------------------------------- */
+  .demo__info {
+    position: absolute;
+    z-index:100;
+    bottom: 1vh;
+    top: auto;
+    font-size:80%;
+    text-align:center;
+    width: 100%;
+  }
+
+  /* CSS GRAND ECRAN */
+
+  @media screen and (min-width :900px)  and (max-width :1280px) {
+    .test {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      z-index: 999;
+      background: rgba(255, 255, 255,1);
+      padding: 5px;
+      margin: 10px;
+  }
+  .monLogin {
+    position: fixed;
+    top: 10px;
+    right: 60px;
+    z-index: 998;
+    padding: 5px;
+    margin: 10px;
+  }
+}
+
+ 
